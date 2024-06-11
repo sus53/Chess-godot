@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8ihoc127n7ha"]
+
+[ext_resource type="Script" path="res://script/Menu.gd" id="1_pqm8t"]
+[ext_resource type="Texture2D" uid="uid://pkj45stp2axn" path="res://assets/gridsquare/playing card background.png" id="2_7qvyy"]
+[ext_resource type="Texture2D" uid="uid://bdlnsj7jqyhwg" path="res://assets/White/Queen.png" id="3_f1sh2"]
+[ext_resource type="Texture2D" uid="uid://dm7msvwmyqxxr" path="res://assets/White/King.png" id="4_nw4nc"]
+
+[sub_resource type="Theme" id="Theme_7q6ix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5g14"]
+bg_color = Color(0.482353, 0.380392, 1, 1)
+
+[sub_resource type="Theme" id="Theme_2nm22"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_v5g14")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t82hj"]
+bg_color = Color(0.482353, 0.380392, 1, 1)
+
+[sub_resource type="Theme" id="Theme_hrj1x"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_t82hj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8j5y"]
+bg_color = Color(0.482353, 0.380392, 1, 1)
+
+[sub_resource type="Theme" id="Theme_ottwe"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_a8j5y")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7q6ix")
+script = ExtResource("1_pqm8t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 47.0
+offset_right = 72.0
+offset_bottom = 124.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2nm22")
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_hrj1x")
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ottwe")
+text = "Quit
+"
+
+[node name="Camera2D" type="Camera2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(15, 82)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(13, 51)
+scale = Vector2(0.364147, 0.290932)
+texture = ExtResource("2_7qvyy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(78, -75)
+rotation = 0.16501
+texture = ExtResource("3_f1sh2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-15, -73)
+rotation = -0.189058
+texture = ExtResource("4_nw4nc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -9.0
+offset_right = 32.0
+offset_bottom = 26.0
+rotation = -0.114906
+theme_override_colors/font_color = Color(0, 0, 0.0352941, 1)
+theme_override_font_sizes/font_size = 25
+text = "Chess"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -16.0
+offset_right = 117.0
+offset_bottom = 19.0
+rotation = 0.0252281
+theme_override_colors/font_color = Color(0, 0, 0.0352941, 1)
+theme_override_font_sizes/font_size = 25
+text = "Hero
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

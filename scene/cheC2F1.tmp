@@ -1,0 +1,376 @@
+[gd_scene load_steps=11 format=3 uid="uid://c05bup0hjw8md"]
+
+[ext_resource type="PackedScene" uid="uid://iwbf0wgopnn1" path="res://scene/square_box.tscn" id="1_31yuy"]
+[ext_resource type="Script" path="res://script/selectpiece.gd" id="2_f7hrm"]
+[ext_resource type="Texture2D" uid="uid://c3uy1r0wdoack" path="res://assets/White/Pawn.png" id="2_k4nk6"]
+[ext_resource type="Script" path="res://script/Pawn.gd" id="3_sx23l"]
+[ext_resource type="Texture2D" uid="uid://c5picgxhmq8pn" path="res://assets/White/Knight.png" id="4_m14ff"]
+[ext_resource type="Script" path="res://script/Knight.gd" id="5_btxhw"]
+[ext_resource type="Texture2D" uid="uid://b3m8qii6uq11r" path="res://assets/Black/Pawn.png" id="6_24kh0"]
+[ext_resource type="Texture2D" uid="uid://n70iwhd7axsp" path="res://assets/Black/Rook.png" id="7_cnfex"]
+[ext_resource type="Texture2D" uid="uid://bvb38nw8bhbdb" path="res://assets/Black/Bishop.png" id="8_gxfcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtj7"]
+size = Vector2(100, 101.584)
+
+[node name="ChessBoard" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="chessRow8" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="b8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="c8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="d8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="e8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="f8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="g8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="h8" parent="chessRow8" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="chessRow7" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="b7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="c7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="d7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="e7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="f7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="g7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="h7" parent="chessRow7" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="chessRow6" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="b6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="c6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="d6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="e6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="f6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="g6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="h6" parent="chessRow6" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="chessRow5" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="b5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="c5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="d5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="e5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="f5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="g5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="h5" parent="chessRow5" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="chessRow4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="b4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="c4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="d4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="e4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="f4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="g4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="h4" parent="chessRow4" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="chessRow3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="b3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="c3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="d3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="e3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="f3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="g3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="h3" parent="chessRow3" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="chessRow2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="b2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="c2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="d2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="e2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="f2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="g2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="h2" parent="chessRow2" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="chessRow1" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="a1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="b1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="c1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="d1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="e1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="f1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="g1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+dark = true
+
+[node name="h1" parent="chessRow1" instance=ExtResource("1_31yuy")]
+layout_mode = 2
+color = Color(1, 0.854902, 0.72549, 1)
+dark = false
+
+[node name="ChessPiece" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="ChessPiece"]
+position = Vector2(26, 349)
+scale = Vector2(0.5, 0.531579)
+script = ExtResource("2_f7hrm")
+
+[node name="Pawn" type="Sprite2D" parent="ChessPiece/Area2D"]
+texture = ExtResource("2_k4nk6")
+script = ExtResource("3_sx23l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChessPiece/Area2D"]
+position = Vector2(0, 1.88116)
+shape = SubResource("RectangleShape2D_5gtj7")
+
+[node name="Knight" type="Sprite2D" parent="."]
+position = Vector2(241, 242)
+scale = Vector2(0.501262, 0.526316)
+texture = ExtResource("4_m14ff")
+script = ExtResource("5_btxhw")
+
+[node name="Pawn" type="Sprite2D" parent="."]
+position = Vector2(240.5, 352)
+scale = Vector2(0.535353, 0.594737)
+texture = ExtResource("2_k4nk6")
+
+[node name="Pawn2" type="Sprite2D" parent="."]
+position = Vector2(79, 79.875)
+scale = Vector2(0.530303, 0.528947)
+texture = ExtResource("6_24kh0")
+
+[node name="Rook" type="Sprite2D" parent="."]
+position = Vector2(399.5, 27.1875)
+scale = Vector2(0.39394, 0.488158)
+texture = ExtResource("7_cnfex")
+
+[node name="Bishop" type="Sprite2D" parent="."]
+position = Vector2(296.063, 26.5625)
+scale = Vector2(0.483586, 0.493421)
+texture = ExtResource("8_gxfcx")
+
+[connection signal="input_event" from="ChessPiece/Area2D" to="ChessPiece/Area2D" method="_on_input_event"]

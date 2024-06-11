@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq0okd84iovmk"]
+
+[ext_resource type="Script" path="res://script/options_game.gd" id="1_4yaxe"]
+[ext_resource type="Texture2D" uid="uid://pkj45stp2axn" path="res://assets/gridsquare/playing card background.png" id="2_2v4gy"]
+
+[node name="OptionsGame" type="Control"]
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -28.0
+offset_top = -49.0
+offset_right = -28.0
+offset_bottom = -49.0
+script = ExtResource("1_4yaxe")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = -502.0
+offset_top = -228.0
+offset_right = -455.0
+offset_bottom = -197.0
+text = "Back to Game
+"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart"
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.522897, 0.305268)
+texture = ExtResource("2_2v4gy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(36, 49)
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

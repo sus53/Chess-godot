@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq0okd84iovmk"]
+
+[ext_resource type="Script" path="res://script/options_game.gd" id="1_4yaxe"]
+[ext_resource type="Texture2D" uid="uid://pkj45stp2axn" path="res://assets/gridsquare/playing card background.png" id="2_2v4gy"]
+[ext_resource type="Texture2D" uid="uid://bdlnsj7jqyhwg" path="res://assets/White/Queen.png" id="3_ygsiw"]
+
+[node name="OptionsGame" type="Control"]
+z_index = 100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -28.0
+offset_top = -49.0
+offset_right = -28.0
+offset_bottom = -49.0
+script = ExtResource("1_4yaxe")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = -502.0
+offset_top = -228.0
+offset_right = -455.0
+offset_bottom = -197.0
+text = "Back to Game
+"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart"
+
+[node name="Exit Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 45.0
+offset_right = 78.0
+offset_bottom = 76.0
+text = "Exit Game"
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.522897, 0.305268)
+texture = ExtResource("2_2v4gy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(36, 49)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(152, -88)
+rotation = 0.416826
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_ygsiw")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Exit Game" to="." method="_on_exit_game_pressed"]

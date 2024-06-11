@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://vcqdlr54vls2"]
+
+[ext_resource type="Script" path="res://script/Promotion.gd" id="1_k2ff3"]
+[ext_resource type="Texture2D" uid="uid://bvb38nw8bhbdb" path="res://assets/Black/Bishop.png" id="1_kpeyj"]
+[ext_resource type="Texture2D" uid="uid://bhachxfubocth" path="res://assets/gridsquare/white.png" id="1_rtu0v"]
+[ext_resource type="Texture2D" uid="uid://c0dl0cf0xhkdj" path="res://assets/Black/Queen.png" id="2_1ksks"]
+[ext_resource type="Texture2D" uid="uid://n70iwhd7axsp" path="res://assets/Black/Rook.png" id="3_u1h3b"]
+[ext_resource type="Texture2D" uid="uid://cq556t21g3ubj" path="res://assets/Black/Knight.png" id="4_vdeq2"]
+
+[sub_resource type="GDScript" id="GDScript_p5y5v"]
+script/source = "extends Area2D
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(self.name)
+
+
+func _on_queen_input_event(viewport, event, shape_idx):
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfdfu"]
+size = Vector2(462, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6ep"]
+size = Vector2(109, 103)
+
+[node name="PromotionPawn" type="Area2D"]
+z_index = 10
+position = Vector2(41, 13)
+script = SubResource("GDScript_p5y5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0551755, 0.0615753, 0.0519775, 1)
+position = Vector2(264.5, 51.5)
+scale = Vector2(4.74257, 1.14458)
+texture = ExtResource("1_rtu0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(263, 52.5)
+shape = SubResource("RectangleShape2D_jfdfu")
+debug_color = Color(0.324203, 0.324203, 0.324203, 1)
+
+[node name="Bishop" type="Area2D" parent="."]
+z_index = 100
+position = Vector2(6, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bishop"]
+z_index = 100
+position = Vector2(67, 52)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bishop"]
+position = Vector2(68, 52)
+scale = Vector2(0.525253, 0.642105)
+texture = ExtResource("1_kpeyj")
+
+[node name="Queen" type="Area2D" parent="."]
+z_index = 100
+position = Vector2(128, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Queen"]
+z_index = 100
+position = Vector2(67, 52)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Queen"]
+position = Vector2(68.375, 53)
+scale = Vector2(0.699495, 0.757895)
+texture = ExtResource("2_1ksks")
+
+[node name="Zebra" type="Area2D" parent="."]
+z_index = 100
+position = Vector2(265, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zebra"]
+z_index = 100
+position = Vector2(67, 52)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Zebra"]
+position = Vector2(70, 51)
+scale = Vector2(0.64899, 0.692105)
+texture = ExtResource("4_vdeq2")
+
+[node name="Rook" type="Area2D" parent="."]
+z_index = 100
+position = Vector2(383, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rook"]
+z_index = 100
+position = Vector2(67, 52)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rook"]
+position = Vector2(67, 51)
+scale = Vector2(0.762626, 0.763158)
+texture = ExtResource("3_u1h3b")
+
+[connection signal="input_event" from="Bishop" to="Bishop" method="_on_input_event"]
+[connection signal="input_event" from="Queen" to="Queen" method="_on_input_event"]
+[connection signal="input_event" from="Zebra" to="Zebra" method="_on_input_event"]
+[connection signal="input_event" from="Rook" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Rook" to="Rook" method="_on_input_event"]

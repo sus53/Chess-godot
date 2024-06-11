@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://iwbf0wgopnn1"]
+
+[ext_resource type="Script" path="res://script/squareBox.gd" id="1_qjx1g"]
+
+[node name="squareBox" type="ColorRect"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.803922, 0.521569, 0.247059, 1)
+script = ExtResource("1_qjx1g")
+
+[node name="CameraPov" type="Camera2D" parent="."]
+position = Vector2(195, 218)

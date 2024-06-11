@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://vcqdlr54vls2"]
+
+[ext_resource type="Script" path="res://script/Promotion.gd" id="1_k2ff3"]
+[ext_resource type="Texture2D" uid="uid://bvb38nw8bhbdb" path="res://assets/Black/Bishop.png" id="1_kpeyj"]
+[ext_resource type="Texture2D" uid="uid://c0dl0cf0xhkdj" path="res://assets/Black/Queen.png" id="2_1ksks"]
+[ext_resource type="Texture2D" uid="uid://n70iwhd7axsp" path="res://assets/Black/Rook.png" id="3_u1h3b"]
+[ext_resource type="Texture2D" uid="uid://cq556t21g3ubj" path="res://assets/Black/Knight.png" id="4_vdeq2"]
+
+[sub_resource type="GDScript" id="GDScript_p5y5v"]
+script/source = "extends Area2D
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(self.name)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfdfu"]
+size = Vector2(495, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6ep"]
+size = Vector2(109, 103)
+
+[node name="PromotionPawn" type="Area2D"]
+z_index = 10
+script = SubResource("GDScript_p5y5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(256.5, 52)
+shape = SubResource("RectangleShape2D_jfdfu")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 20
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(67, 52)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(65, 53)
+scale = Vector2(0.777778, 0.926316)
+texture = ExtResource("1_kpeyj")
+
+[node name="Area2D2" type="Area2D" parent="."]
+z_index = 20
+position = Vector2(128, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(67, 52)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(67, 51)
+texture = ExtResource("2_1ksks")
+
+[node name="Area2D3" type="Area2D" parent="."]
+z_index = 20
+position = Vector2(265, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(67, 52)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
+position = Vector2(67, 53)
+texture = ExtResource("4_vdeq2")
+
+[node name="Area2D4" type="Area2D" parent="."]
+z_index = 20
+position = Vector2(383, 0)
+script = ExtResource("1_k2ff3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(67, 52)
+shape = SubResource("RectangleShape2D_kq6ep")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D4"]
+position = Vector2(67, 51)
+texture = ExtResource("3_u1h3b")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Area2D2" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Area2D3" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Area2D4" to="." method="_on_area_2d_input_event"]
